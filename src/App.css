@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #F4F4F6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,6 +23,34 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.Login-cards{
+  top: 226px;
+  left: 452px;
+  width: 296px;
+  height: 249px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 12px;
+  opacity: 1;
+  color: #537178;
+  padding: 2rem 2rem;
+}
+
+.Login-cards:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.Login-cards-Submit{
+  top: 402px;
+left: 476px;
+width: 244px;
+height: 40px;
+background: #5285EC 0% 0% no-repeat padding-box;
+border-radius: 8px;
+opacity: 1;
+}
+
 
 .App-link {
   color: #61dafb;
@@ -35,4 +63,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.Login-cards-title{
+  text-align: left;
+}
+
+.Login-cards-Text{
+  top: 298px;
+  left: 476px;
+  width: 244px;
+  height: 40px;
+  background: #EEF1F8 0% 0% no-repeat padding-box;
+  border-radius: 8px;
+  opacity: 1;
+
 }
