@@ -1,0 +1,16 @@
+
+.AddNewModal-cards
+{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 12px;
+    opacity: 1;
+    color: #537178;
+    padding: 2rem 2rem;
+    align-items: center;
+  }
+  
+
+  .AddNewModal-cards-body{
+      padding: 1rem 4rem;
+  }

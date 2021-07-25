@@ -1,0 +1,78 @@
+.TaskOperationalTab-panel{
+    width: 100%;
+    padding: 3rem 11rem;
+}
+
+.TaskOperationalTab-text{
+    text-align: left;
+font: normal normal medium 20px/24px Montserrat;
+letter-spacing: 0px;
+color: #537178;
+opacity: 1;
+}
+
+.TaskOperationalTab-textbox{
+    text-align: left;
+font: normal normal medium 14px/18px Montserrat;
+letter-spacing: 0px;
+background-color: #D9DFEB ;
+color: white;
+opacity: 1;
+}
+
+.TaskOperationalTab-textbox::-webkit-input-placeholder {
+    color: white;
+}
+
+.TaskOperationalTab-ListPane{
+    width: 100%;
+    /* padding: 1rem 12rem; */
+}
+
+.TaskOperationalTab-ListPaneContainer{
+    padding: 2rem 0rem;
+    width: 100%;
+}
+
+.TaskOperationalTab-ControlPanel{
+    padding: 1rem 0rem;
+}
+
+.TaskOperationalTab-Items{
+    text-align: left;
+font: normal normal medium 20px/24px Montserrat;
+letter-spacing: 0px;
+color: #5285EC;
+opacity: 1;
+font-size: 1.2rem;
+border: none;
+}
+
+.TaskOperationalTab-taskName{
+    padding: 0rem 0rem 0rem 0rem;
+}
+
+.TaskOperationalTab-icons{
+    height: 1.5rem;
+    width: 4rem;
+    float: right;
+}
+
+.TaskOperationalTab-bottomBorder{
+    opacity: 1;
+    border-bottom: 0.2rem solid #E8E8E8;
+    padding: 0rem 0rem 0.5rem 0rem;
+}
+
+.TaskOperationalTab-complted{
+    text-decoration: line-through;
+    color: #537178 !important;
+}
+
+.TaskOperationalTab-uncompleted{
+    text-decoration: none;
+}
+
+.TaskOperationalTab-checkBox{
+    height: 1.5rem;
+}

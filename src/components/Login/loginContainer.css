@@ -1,0 +1,68 @@
+
+.Login-cards{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 12px;
+    opacity: 1;
+    color: #537178;
+    padding: 2rem 2rem;
+    align-items: center;
+  }
+  
+  .Login-cards:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .Login-cards-Submit{
+    top: 402px;
+  left: 476px;
+  width: 244px;
+  height: 40px;
+  background: #5285EC 0% 0% no-repeat padding-box;
+  border-radius: 8px;
+  opacity: 1;
+  }
+  
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  .Login-cards-title{
+    text-align: left;
+  }
+  
+  .Login-cards-Text{
+    background-color: #EEF1F8;
+  
+  }
+  
+  .Login-elements-Padding{
+    padding:.5rem 0rem;
+  }
+  
+  .Login-button-Padding{
+    padding:.5rem 6rem;
+    background-color: #5285EC;
+  }
+
+  .Login-Container {
+    background-color: #F4F4F6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
