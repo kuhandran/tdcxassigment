@@ -1,9 +1,11 @@
+import { connect } from 'react-redux';
 import React from "react";
 import { Card, Form, Button } from "react-bootstrap";
 import './loginContainer.css';
 import { Redirect } from 'react-router';
 import axios from "axios";
 
+import store from "../../reducers/store"
 
 export class LoginContainer extends React.Component {
     constructor(props) {
@@ -21,17 +23,24 @@ export class LoginContainer extends React.Component {
     onUpdateNameInformation = (event) => {
         this.setState({ name: event.target.value })
     }
-
-     
+      
     navigation = async () => {
-        const result = await axios.post("localhost:3001" + "/login", {
-            name: this.state.name
-        });
-        console.log(result);
+        const data = {
+            id:this.state.id,
+            name:this.state.name
+        }
+        axios.post("http://localhost:3001" + "/login", data)
+            .then(function (response) {
+                if (response.data) {
+                    store.dispatch({
+                        type: "LOGIN_DATA",
+                        payload: response.data
+                    })
+                }
+
+            })
+       this.setState({auth:true});
     };
-
-
-
 
     render() {
 
@@ -85,3 +94,11 @@ export class LoginContainer extends React.Component {
         );
     }
 }
+
+// const mapStateToProps = (state) => {
+//     return {
+//       Login: state.Login
+//     };
+// }
+
+// export default connect(mapStateToProps)(LoginContainer);

@@ -5,7 +5,7 @@ import { TaskModal } from "./TaskModal";
 import { InfoPanelCards } from "./InfoPanelCards";
 import { TaskOperationalTab } from "../TaskOperationalTab"
 
-class Dashboard extends React.Component {
+class DashboardContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -32,4 +32,4 @@ class Dashboard extends React.Component {
 }
 
 
-export  {Dashboard};
+export  {DashboardContainer};

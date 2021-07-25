@@ -12,7 +12,7 @@ import {
 import history from "../../history";
 
 import { LoginContainer } from '../../components/Login/loginContainer';
-import { Dashboard } from "../../components/Dashboard";
+import { DashboardContainer } from "../../components/Dashboard";
 
 
 
@@ -22,7 +22,7 @@ export function Root() {
     return (
         <Router history={history}>
             <Switch>
-                <Route path="/Dashboard" component={Dashboard} />
+                <Route path="/Dashboard" component={DashboardContainer} />
                 <Route path="/Login" component={LoginContainer} />
                 <Route path="/" exact component={LoginContainer} />
                 <Redirect from="*" to="/" />
