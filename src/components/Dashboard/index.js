@@ -29,11 +29,11 @@ class DashboardContainer extends React.Component {
     }
 
     componentDidMount() {
-        let token = store.getState() && 
-                    store.getState().Login && 
-                    store.getState().Login.token && 
-                    store.getState().Login.token.token;
-                    
+        let token = store.getState() &&
+            store.getState().Login &&
+            store.getState().Login.token &&
+            store.getState().Login.token.token;
+
         if (!token) {
             this.setState({ valid: false })
         } else {
@@ -52,7 +52,7 @@ class DashboardContainer extends React.Component {
 
     render() {
 
-        let token
+        let tokenLength = this.state.token
 
         if (!this.state.valid) {
             return <Redirect to={"/Login"} />
@@ -60,7 +60,7 @@ class DashboardContainer extends React.Component {
 
         return (
             <div className="Login-Container">
-                {this.state.token && <div>
+                {tokenLength.length > 0 && <div>
                     <DashboardHeader />
                     <DashboardContent
                         token={this.state.token}
