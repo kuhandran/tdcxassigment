@@ -1,11 +1,12 @@
-import { connect } from 'react-redux';
+//import { connect } from 'react-redux';
 import React from "react";
 import { Card, Form, Button } from "react-bootstrap";
 import './loginContainer.css';
 import { Redirect } from 'react-router';
 import axios from "axios";
 
-import store from "../../reducers/store"
+import store from "../../reducers/store";
+//import {UpdateLoginInformation}  from "../../reducers/updateData"
 
 export class LoginContainer extends React.Component {
     constructor(props) {
@@ -23,23 +24,26 @@ export class LoginContainer extends React.Component {
     onUpdateNameInformation = (event) => {
         this.setState({ name: event.target.value })
     }
-      
+
     navigation = async () => {
         const data = {
-            id:this.state.id,
-            name:this.state.name
+            id: this.state.id,
+            name: this.state.name
         }
-        axios.post("http://localhost:3001" + "/login", data)
-            .then(function (response) {
-                if (response.data) {
-                    store.dispatch({
-                        type: "LOGIN_DATA",
-                        payload: response.data
-                    })
-                }
-
-            })
-       this.setState({auth:true});
+        try {
+            const resp = await axios.post("http://localhost:3001" + "/login", data);
+            console.log(resp.data);
+            if (resp) {
+                store.dispatch({
+                    type: "LOGIN_DATA",
+                    payload: resp.data
+                });
+                this.setState({ auth: true })
+            }
+        } catch (err) {
+            
+            console.error(err);
+        }
     };
 
     render() {

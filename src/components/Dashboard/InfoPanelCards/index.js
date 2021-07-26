@@ -8,26 +8,14 @@ export class InfoPanelCards extends React.Component {
         super(props);
         this.state = {
             id: "",
-            name: "",
-            tasks: [
-                {
-                    "name": "Refactor something",
-                    "completed": false
-                },
-                {
-                    "name": "Refactor nothing",
-                    "completed": true
-                }
-            ]
+            name: ""
+            
         };
-    }
+    }    
 
 
     render() {
-
-
-
-
+    
         return (
             <div className={`${"row"} ${"InfoLabels-Padding"}`}>
                 <div className="col-sm-4 col-xs-12">
@@ -35,9 +23,9 @@ export class InfoPanelCards extends React.Component {
                         <div className="card-body">
                             <h5 className={`${"card-title"} ${"InfoLabels-custom-cardtitle"}`}>Task Completed</h5>
                             <div className="cards-body-alignitems">
-                                <span className="cards-task-done">5</span>
+                                <span className="cards-task-done">{this.props.totalPending}</span>
                                 <span className="cards-task-total">/</span>
-                                <span className="cards-task-total">10</span>
+                                <span className="cards-task-total">{this.props.totalCompleted}</span>
                             </div>
                         </div>
                     </div>
@@ -47,7 +35,7 @@ export class InfoPanelCards extends React.Component {
                         <div className="card-body">
                             <h5 className={`${"card-title"} ${"InfoLabels-custom-cardtitle"}`}>Latest Created Task</h5>
                             <ul>
-                                {this.state.tasks.map((task, index) => (
+                                {this.props.allTasks.map((task, index) => (
                                     <li className={task.completed ? "Completed" : "unCompleted"}> {task.name}</li>
                                 ))}
                             </ul>
@@ -59,7 +47,10 @@ export class InfoPanelCards extends React.Component {
                     <div className={`${"card"} ${"InfoLabels-custom-cards"}`}>
                         <div className="card-body">
                             <div className="card-body-pie-padding">
-                                <PieChart />
+                                <PieChart 
+                                    totalPending = {this.props.totalPending}
+                                    totalCompleted = {this.props.totalCompleted}
+                                />
                             </div>
 
                         </div>

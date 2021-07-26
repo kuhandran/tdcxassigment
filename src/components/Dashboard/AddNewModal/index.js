@@ -17,7 +17,7 @@ export class AddNewModal extends React.Component {
             <Card className="AddNewModal-cards">
                 <Card.Body className="AddNewModal-cards-body">
                     <Card.Title className="Login-cards-title" >You Have No Task</Card.Title>
-                    <Button className="btn btn-primary btn-lg">+ New Task</Button>
+                    <Button className="btn btn-primary btn-lg" onClick={() => this.props.getToggleModal(true)}>+ New Task</Button>
                 </Card.Body>
             </Card>
         );

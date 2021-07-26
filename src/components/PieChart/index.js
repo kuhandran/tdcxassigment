@@ -1,21 +1,18 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
 
-// some of this code is a variation on https://jsfiddle.net/cmyker/u6rr5moq/
-
-
-const data = {
-  labels: ["Completed","Pending"],
+let data = {
+  labels: ["Completed", "Pending"],
   datasets: [
     {
-      data: [5,20],
+      data: [0, 0],
       backgroundColor: [
         "rgb(232,236,236)",
         "rgb(82,133,236)",
       ]
     }
   ],
- 
+
   plugins: {
     labels: {
       render: "percentage",
@@ -23,19 +20,38 @@ const data = {
       precision: 2
     },
   },
-   text: "23%",
+  text: "23%",
 };
 
+
+
 export class PieChart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      chartData: []
+    };
+  }
+
+  getData = () => {
+    let values = [];
+    values.push(this.props.totalPending);
+    values.push(this.props.totalCompleted);
+    data.datasets[0].data = values;
+    return data;
+  }
+
   render() {
+
+    let newData = this.getData();
+
     return (
       <div>
         <Pie
-          data={data}
+          data={newData}
           options={{
-            
             elements: {
-              
+
               center: {
                 legend: { display: true, position: "right" },
                 text: "Red is 2/3 the total numbers",
@@ -46,7 +62,7 @@ export class PieChart extends React.Component {
                 lineHeight: 25 // Default is 25 (in px), used for when text wraps
               }
             },
-            
+
           }}
         />
       </div>
