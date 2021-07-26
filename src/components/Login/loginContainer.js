@@ -53,7 +53,7 @@ export class LoginContainer extends React.Component {
         } else {
             let location = window.location.pathname;
             let path = location.split("/");
-            if (path[1] != "Login") {
+            if (path[1] !== "Login") {
                 return <Redirect to={"/Login"} />
             }
         }

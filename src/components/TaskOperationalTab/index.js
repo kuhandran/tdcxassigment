@@ -60,7 +60,7 @@ export class TaskOperationalTab extends React.Component {
 
     render() {
 
-        let DisplayTaskValue = this.state.filteredTask.length != 0 ? this.state.filteredTask : this.props.allTasks;
+        let DisplayTaskValue = this.state.filteredTask.length !== 0 ? this.state.filteredTask : this.props.allTasks;
 
         return (
             <div>

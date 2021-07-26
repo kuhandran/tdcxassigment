@@ -27,7 +27,7 @@ class DashboardContent extends React.Component {
 
     getAllTasks = async (data) => {
         try {
-            const resp = await axios.post("http://localhost:3001" + "/tasks", data);
+            let resp = await axios.post("http://localhost:3001" + "/tasks", data);
             if (resp) {
                 this.setState({ task: resp.data })
                 this.getDashboardDetails(this.state.task)
@@ -60,7 +60,7 @@ class DashboardContent extends React.Component {
 
     deleteRecords = (data) => {
         let ActiveTask = this.state.task.filter(function (task) {
-            return task.id != data;
+            return task.id !== data;
         });
         this.setState({ task: ActiveTask });
         this.getDashboardDetails(ActiveTask);
@@ -80,7 +80,7 @@ class DashboardContent extends React.Component {
 
     UpdateStatusRecord = (data, staus) => {
         let updatedTask = this.state.task.filter(function (task) {
-            if (task.id == data) {
+            if (task.id === data) {
                 task.completed = !staus
             }
             return task;
@@ -91,7 +91,7 @@ class DashboardContent extends React.Component {
 
     updateTaskName = (id, name) => {
         let updatedTask = this.state.task.filter(function (task) {
-            if (task.id == id) {
+            if (task.id === id) {
                 task.name = name
             }
             return task;
@@ -108,7 +108,7 @@ class DashboardContent extends React.Component {
 
         return (
             <div>
-                {taskLength == 0 && <div>
+                {taskLength === 0 && <div>
                     <TaskModal
                         show={this.state.openAddTaskModal}
                         addNewTask={this.AddNewTask}

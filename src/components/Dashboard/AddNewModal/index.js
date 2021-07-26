@@ -1,5 +1,4 @@
 import React from "react";
-import { render } from "react-dom";
 import { Card, Button } from "react-bootstrap";
 import './AddNewModal.css'
 
