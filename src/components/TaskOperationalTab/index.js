@@ -89,11 +89,11 @@ export class TaskOperationalTab extends React.Component {
                         <ul className={`${"list-group"} ${"TaskOperationalTab-ListPane"}`}>
                             {DisplayTaskValue.map((task, index) => (
                                 <li className={`${"list-group-item"} ${"TaskOperationalTab-Items"} ${"row"}`}>
-                                    <div className={`${"col-sm-12"} ${"TaskOperationalTab-bottomBorder"}`}>
-                                        <img className={`${"col-sm-2"} ${"TaskOperationalTab-checkBox"}`} src={task.completed ? check : uncheck} onClick={() => this.props.UpdateStatusRecord(task.id, task.completed)} />
-                                        <span className={`${"col-sm-6"} ${"TaskOperationalTab-taskName"} ${task.completed ? "TaskOperationalTab-complted" : "TaskOperationalTab-uncompleted"}`}>{task.name}</span>
-                                        <img className={`${"col-sm-2"} ${"TaskOperationalTab-icons"}`} src={editLogo} onClick={() => this.editRecord(task.id, task.name)} />
-                                        <img className={`${"col-sm-2"} ${"TaskOperationalTab-icons"}`} src={deleteLogo} onClick={() => this.props.deleteRecords(task.id)} />
+                                    <div className={`${"col-sm-12 col-xs-12"} ${"TaskOperationalTab-bottomBorder"}`}>
+                                        <img className={`${"col-sm-2 col-xs-4"} ${"TaskOperationalTab-checkBox"}`} src={task.completed ? check : uncheck} onClick={() => this.props.UpdateStatusRecord(task.id, task.completed)} />
+                                        <span className={`${"col-sm-6 col-xs-8"} ${"TaskOperationalTab-taskName"} ${task.completed ? "TaskOperationalTab-complted" : "TaskOperationalTab-uncompleted"}`}>{task.name}</span>
+                                        <img className={`${"col-sm-2 col-xs-12"} ${"TaskOperationalTab-icons"}`} src={editLogo} onClick={() => this.editRecord(task.id, task.name)} />
+                                        <img className={`${"col-sm-2 col-xs-12"} ${"TaskOperationalTab-icons"}`} src={deleteLogo} onClick={() => this.props.deleteRecords(task.id)} />
                                     </div>
                                 </li>
                             ))}

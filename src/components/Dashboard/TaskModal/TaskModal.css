@@ -14,11 +14,18 @@
     padding: 1rem 0rem;
 }
 
+@media only screen and (max-device-width: 480px) {
+    .TaskModal-btn{
+        padding:0.5rem 7.8rem  !important;
+    }
+}
+
 .TaskModal-btn{
     background: #5285EC 0% 0% no-repeat padding-box;
     border-radius: 8px;
     opacity: 1;
     padding:0.5rem 12.5rem;
+    
 }
 
 .TaskModal-padding{
