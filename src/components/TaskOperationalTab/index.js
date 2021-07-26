@@ -7,6 +7,16 @@ import check from "../../assets/svg/check.svg";
 import uncheck from "../../assets/svg/blank-check.svg";
 import { EditModal } from "./EditModal";
 
+/*
+  Date: 24/07/2021
+  Developer : Kuhandran
+  Purpose:
+  - componentDidMount will update all the tasks
+  - {filterSearch} search only the bottom items
+  - {editRecord} is for open the modal to edit the name
+  - {updateTaskName} to update the taskname to be edited
+  */
+
 
 
 export class TaskOperationalTab extends React.Component {
@@ -19,6 +29,8 @@ export class TaskOperationalTab extends React.Component {
             editname: null
         };
     }
+
+
 
 
     componentDidMount() {
@@ -50,7 +62,7 @@ export class TaskOperationalTab extends React.Component {
     }
 
     updateTaskName = (name) => {
-        this.props.updateTaskName(this.state.editid,name);
+        this.props.updateTaskName(this.state.editid, name);
         this.setState({
             showEditModal: false,
             editid: null,
