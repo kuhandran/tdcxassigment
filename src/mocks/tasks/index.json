@@ -1,1 +1,17 @@
-[]
+[
+    {
+        "name": "Refactor something",
+        "completed": true,
+        "id": 1
+    },
+    {
+        "name": "Refactor something",
+        "completed": false,
+        "id": 2
+    },
+    {
+        "name": "Refactor something",
+        "completed": true,
+        "id": 3
+    }
+]
