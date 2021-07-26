@@ -1,6 +1,13 @@
+/*
+Date: 24/07/2021
+Developer : Kuhandran
+Purpose: 
+- Update the login payload and call the action constant
+*/
+
 import { LOGIN_DATA } from '../actions';
 const initialState = {
-    Login: 5
+    Login: null
 };
 function reducer(state = initialState, action) {
     switch (action.type) {

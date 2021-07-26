@@ -3,6 +3,17 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import "./EditModal.css"
 
+/*
+  Date: 24/07/2021
+  Developer : Kuhandran
+  Purpose:
+  - onUpdateTaskName to setstate the taskname
+  - {updateTaskName} props function will update the parent class
+  */
+
+
+
+
 export class EditModal extends React.Component {
     constructor(props) {
         super(props);

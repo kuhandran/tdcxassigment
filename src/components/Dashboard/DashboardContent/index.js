@@ -5,6 +5,20 @@ import axios from "axios";
 import { TaskModal } from "../TaskModal";
 import { AddNewModal } from "../AddNewModal"
 
+/*
+Date: 24/07/2021
+Developer : Kuhandran
+Purpose: 
+- componentDidMount get the token 
+- getAllTasks to use API call to get the data
+- { getDashboardDetails } to get pending, completed and count of the status
+- { getToggleModal } to open the  add task modal
+- { deleteRecords } to delete task
+- { AddNewTask } to store the new task
+- { UpdateStatusRecord } to update the status record
+- { updateTaskName } after edited the taskname to update  
+*/
+
 
 class DashboardContent extends React.Component {
     constructor(props) {
@@ -22,6 +36,7 @@ class DashboardContent extends React.Component {
     }
 
     componentDidMount() {
+        console.log(this.props, 'props');
         this.getAllTasks(this.props.token);
     }
 
@@ -103,6 +118,9 @@ class DashboardContent extends React.Component {
 
 
     render() {
+
+        console.log(this.props, 'propsvalue');
+
         let taskLength = this.state.task.length;
 
 

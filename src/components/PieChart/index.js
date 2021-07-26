@@ -24,6 +24,16 @@ let data = {
 };
 
 
+/*
+  Date: 24/07/2021
+  Developer : Kuhandran
+  Purpose:
+  - data initated with graph
+  - {getData} update the data
+  */
+
+
+
 
 export class PieChart extends React.Component {
   constructor(props) {

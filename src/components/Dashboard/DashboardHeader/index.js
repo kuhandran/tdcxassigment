@@ -3,6 +3,16 @@ import './DashboardHeader.css';
 import { Redirect } from 'react-router';
 import profile from '../../../assets/img/profiles/profile.png';
 
+/*
+Date: 24/07/2021
+Developer : Kuhandran
+Purpose:
+-  Display navigation bar
+- { Logout } update the state with id 
+- { onUpdateNameInformation } update the state with name
+*/
+
+
 export class DashboardHeader extends React.Component {
     constructor(props) {
         super(props);

@@ -2,6 +2,17 @@ import React from "react";
 import './InfoPanelCards.css'
 import { PieChart } from "../../PieChart";
 
+/*
+Date: 24/07/2021
+Developer : Kuhandran
+Purpose:
+- Task Completed first card
+- { onUpdateIDInformation } update the state with id 
+-  Get the latest cards 
+- { PieChart } to load the valid
+*/
+
+
 
 export class InfoPanelCards extends React.Component {
     constructor(props) {

@@ -1,7 +1,17 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import "./TaskModal.css"
+import "./TaskModal.css";
+
+/*
+Date: 24/07/2021
+Developer : Kuhandran
+Purpose:
+- Addnew Task modal
+- { onUpdateTaskName } update taskname
+- { addNewTask } pass through props
+*/
+
 
 export class TaskModal extends React.Component {
   constructor(props) {

@@ -6,7 +6,17 @@ import { Redirect } from 'react-router';
 import axios from "axios";
 
 import store from "../../reducers/store";
-//import {UpdateLoginInformation}  from "../../reducers/updateData"
+
+/*
+Date: 24/07/2021
+Developer : Kuhandran
+Purpose:
+- Update the login container application
+- { onUpdateIDInformation } update the state with id 
+- { onUpdateNameInformation } update the state with name
+- { navigation } redirect to dashboard and update login store
+*/
+
 
 export class LoginContainer extends React.Component {
     constructor(props) {
@@ -34,19 +44,26 @@ export class LoginContainer extends React.Component {
             const resp = await axios.post("http://localhost:3001" + "/login", data);
             console.log(resp.data);
             if (resp) {
-                store.dispatch({
+                store.dispatch({   // should not use this need to get from maptoprops using connect
                     type: "LOGIN_DATA",
                     payload: resp.data
                 });
                 this.setState({ auth: true })
             }
         } catch (err) {
-            
+
             console.error(err);
         }
     };
 
     render() {
+
+        /*
+        Date: 24/07/2021
+        Developer : Kuhandran
+        Purpose:
+        - bellow condition is check every render to direct back to correct location
+        */
 
         if (this.state.auth) {
             return <Redirect to={"/Dashboard"} />
@@ -57,6 +74,8 @@ export class LoginContainer extends React.Component {
                 return <Redirect to={"/Login"} />
             }
         }
+
+
 
         return (
             <div className="Login-Container">

@@ -1,10 +1,19 @@
 import React from "react";
-import { DashboardHeader } from './DashboardHeader'
-// import { AddNewModal } from "./AddNewModal";
-// import { TaskModal } from "./TaskModal";
+import { DashboardHeader } from './DashboardHeader';
 import { DashboardContent } from "./DashboardContent";
 import { Redirect } from 'react-router';
 import store from "../../reducers/store";
+
+/*
+Date: 24/07/2021
+Developer : Kuhandran
+Purpose:
+- Update the login container application
+- { componentDidMount } check the store for token and navigate
+- { DashboardContent } load the relevent content
+*/
+
+
 
 
 class DashboardContainer extends React.Component {
@@ -14,29 +23,36 @@ class DashboardContainer extends React.Component {
             id: "",
             name: "",
             valid: true,
-            token:[]
-           
+            token: []
+
         };
     }
 
     componentDidMount() {
-        let token = store.getState().Login.token;
+        let token = store.getState() && 
+                    store.getState().Login && 
+                    store.getState().Login.token && 
+                    store.getState().Login.token.token;
+                    
         if (!token) {
             this.setState({ valid: false })
-        } else{
-            this.setState({token:token})
+        } else {
+            console.log(token, 'token');
+            this.setState({ token: token })
         }
     }
 
-    componentWillMount() {
-        let token = store.getState().Login.token;
-        if (!token) {
-            this.setState({ valid: false })
-        }
-    }
+    // componentWillMount() {
+    //     let token = store.getState().Login.token;
+    //     if (!token) {
+    //         this.setState({ valid: false })
+    //     }
+    // }
 
-   
+
     render() {
+
+        let token
 
         if (!this.state.valid) {
             return <Redirect to={"/Login"} />
@@ -44,10 +60,13 @@ class DashboardContainer extends React.Component {
 
         return (
             <div className="Login-Container">
-                <DashboardHeader />
-                <DashboardContent
-                    token = {this.state.token}
-                />
+                {this.state.token && <div>
+                    <DashboardHeader />
+                    <DashboardContent
+                        token={this.state.token}
+                    />
+                </div>
+                }
             </div>
 
         );
