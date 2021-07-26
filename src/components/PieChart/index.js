@@ -43,22 +43,20 @@ export class PieChart extends React.Component {
     };
   }
 
-  getData = () => {
+  render() {
+
     let values = [];
     values.push(this.props.totalPending);
     values.push(this.props.totalCompleted);
+    data.datasets[0].data = []; 
     data.datasets[0].data = values;
-    return data;
-  }
 
-  render() {
-
-    let newData = this.getData();
+    console.log(data,'newData');
 
     return (
       <div>
         <Pie
-          data={newData}
+          data={data}
           options={{
             elements: {
 
